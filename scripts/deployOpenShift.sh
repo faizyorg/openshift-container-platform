@@ -169,7 +169,7 @@ openshift_master_cluster_public_hostname=$PRIVATEDNS
 openshift_master_cluster_public_vip=$PRIVATEIP"
 else
 	MASTERCLUSTERADDRESS="openshift_master_cluster_hostname=$MASTERPUBLICIPHOSTNAME
-openshift_master_cluster_public_hostname=$MASTERPUBLICIPHOSTNAME
+openshift_master_cluster_public_hostname=master.$ROUTING
 openshift_master_cluster_public_vip=$MASTERPUBLICIPADDRESS"
 fi
 
@@ -331,7 +331,7 @@ openshift_release=v3.11
 #openshift_pkg_version=-3.11
 docker_udev_workaround=True
 openshift_use_dnsmasq=true
-openshift_master_default_subdomain=$ROUTING
+openshift_master_default_subdomain=apps.$ROUTING
 openshift_override_hostname_check=true
 osm_use_cockpit=true
 os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
