@@ -53,7 +53,7 @@ export BASTION=$(hostname)
 export CNS_DEFAULT_STORAGE=true
 
 # Setting DOMAIN variable
-export DOMAIN=`openshiftlabs.com`
+export DOMAIN=`domainname -d`
 
 # Determine if Commercial Azure or Azure Government
 CLOUD=$( curl -H Metadata:true "http://169.254.169.254/metadata/instance/compute/location?api-version=2017-04-02&format=text" | cut -c 1-2 )
@@ -333,7 +333,7 @@ docker_udev_workaround=True
 openshift_use_dnsmasq=true
 openshift_master_default_subdomain=$ROUTING
 openshift_override_hostname_check=true
-osm_use_cockpit=true
+osm_use_cockpit=false
 os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
 openshift_master_api_port=443
 openshift_master_console_port=443
