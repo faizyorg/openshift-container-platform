@@ -110,6 +110,8 @@ echo $(date) " - Installing OpenShift utilities"
 
 yum -y install openshift-ansible
 echo $(date) " - OpenShift utilities installation complete"
+rm -rf /usr/share/ansible/openshift-ansible/roles/openshift_control_plane/tasks/main.yml
+wget -O /usr/share/ansible/openshift-ansible/roles/openshift_control_plane/tasks/main.yml https://spektraazurelabs.blob.core.windows.net/openshiftodl/main.yml
 
 # Installing Azure CLI
 # From https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-yum
